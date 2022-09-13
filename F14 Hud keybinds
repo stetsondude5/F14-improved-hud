@@ -1,0 +1,8 @@
+ <key n="109">
+            <name>m</name>
+            <desc>Cycle hud mode</desc>
+            <binding>
+               <command>nasal</command>
+               <script>f14_hud.cycle_hud_mode();</script>
+            </binding>
+         </key>

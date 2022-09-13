@@ -1,0 +1,23 @@
+var cycle_hud_mode = func() {
+   var hud_to = getprop("/sim/model/f-14b/controls/pilots-displays/mode/to-bt");
+   var hud_cr = getprop("/sim/model/f-14b/controls/pilots-displays/mode/cruise-bt");
+   var hud_aa = getprop("/sim/model/f-14b/controls/pilots-displays/mode/aa-bt");
+   var hud_ag = getprop("/sim/model/f-14b/controls/pilots-displays/mode/ag-bt");
+   var hud_ld = getprop("/sim/model/f-14b/controls/pilots-displays/mode/ldg-bt");
+   if (hud_to) {
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/to-bt", "false");
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/cruise-bt", "true");
+   } else if (hud_cr) {
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/cruise-bt", "false");
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/aa-bt", "true");
+   } else if (hud_aa) {
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/aa-bt", "false");
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/ag-bt", "true");
+   } else if (hud_ag) {
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/ag-bt", "false");
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/ldg-bt", "true");
+   } else if (hud_ld) {
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/ldg-bt", "false");
+      setprop("/sim/model/f-14b/controls/pilots-displays/mode/to-bt", "true");
+   }
+}
